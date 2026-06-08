@@ -1,0 +1,45 @@
+[package]
+name = "mt-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Core types for mesh-torus distributed training: topology and mixed-precision primitives"
+
+[dependencies]
+# FP8 / half-precision
+float8 = { workspace = true }
+half = { workspace = true }
+
+# Burn (for tensor type integration)
+burn = { workspace = true, default-features = false }
+
+# Serialization
+serde = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Utilities
+hashbrown = { workspace = true }
+parking_lot = { workspace = true }
+
+# Optional: GPU topology auto-discovery
+nvml-wrapper = { workspace = true, optional = true }
+
+[dev-dependencies]
+# Testing
+rstest = { workspace = true }
+proptest = { workspace = true }
+criterion = { workspace = true }
+
+[features]
+default = []
+discovery = ["dep:nvml-wrapper"]
+

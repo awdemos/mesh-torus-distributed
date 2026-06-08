@@ -1,0 +1,36 @@
+[package]
+name = "mt-burn"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Burn deep learning framework integration for mesh-torus distributed training"
+
+[dependencies]
+# Internal
+mt-core = { workspace = true }
+
+# Burn
+burn = { workspace = true, default-features = false }
+burn-autodiff = { workspace = true }
+
+# FP8
+float8 = { workspace = true }
+half = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Utilities
+hashbrown = { workspace = true }
+parking_lot = { workspace = true }
+
+[dev-dependencies]
+rstest = { workspace = true }
+burn-ndarray = { workspace = true }

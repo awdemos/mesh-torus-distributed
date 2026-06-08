@@ -1,0 +1,46 @@
+[package]
+name = "mt-training"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Training orchestration for mesh-torus distributed training"
+
+[dependencies]
+# Internal
+mt-core = { workspace = true }
+mt-comm = { workspace = true }
+mt-pipeline = { workspace = true }
+mt-burn = { workspace = true }
+
+# Burn
+burn = { workspace = true, default-features = false }
+burn-optim = { workspace = true }
+burn-train = { workspace = true }
+burn-autodiff = { workspace = true }
+
+# Async runtime
+tokio = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+
+# Utilities
+hashbrown = { workspace = true }
+parking_lot = { workspace = true }
+
+[dev-dependencies]
+rstest = { workspace = true }
+mt-comm = { workspace = true }
+burn-ndarray = { workspace = true }
+toml = "0.8"

@@ -1,0 +1,45 @@
+[package]
+name = "mt-comm"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Communication primitives for mesh-torus distributed training"
+
+[dependencies]
+# Internal
+mt-core = { workspace = true }
+
+# Async runtime
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+bincode = { workspace = true }
+postcard = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Utilities
+hashbrown = { workspace = true }
+parking_lot = { workspace = true }
+crossbeam = { workspace = true }
+
+# Optional: NCCL FFI bridge
+# nccl-sys = { version = "0.1", optional = true }
+
+[dev-dependencies]
+rstest = { workspace = true }
+tokio-test = "0.4"
+
+[features]
+default = []
+nccl = []

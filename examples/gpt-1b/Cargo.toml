@@ -1,0 +1,40 @@
+[package]
+name = "gpt-1b"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "GPT-1B distributed training example using mesh-torus hybrid topology"
+
+[dependencies]
+# Internal
+mt-core = { workspace = true }
+mt-comm = { workspace = true }
+mt-pipeline = { workspace = true }
+mt-training = { workspace = true }
+mt-burn = { workspace = true }
+
+# Burn backends & optimizers
+burn = { workspace = true, default-features = false }
+burn-ndarray = { workspace = true }
+burn-autodiff = { workspace = true }
+burn-optim = { workspace = true }
+
+# Async runtime
+tokio = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# Utilities
+hashbrown = { workspace = true }
+
+[[bin]]
+name = "gpt-1b"
+path = "src/main.rs"
