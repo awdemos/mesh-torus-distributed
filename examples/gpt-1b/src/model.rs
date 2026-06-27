@@ -22,6 +22,7 @@ pub struct GptConfig {
 
 impl GptConfig {
     /// ~1B parameter configuration (GPT-2 scale).
+    #[cfg(test)]
     pub fn gpt_1b() -> Self {
         Self {
             vocab_size: 50257,
@@ -128,6 +129,7 @@ impl<B: Backend> GptModel<B> {
     }
 
     /// Returns the number of transformer blocks.
+    #[allow(dead_code)]
     pub fn num_layers(&self) -> usize {
         self.blocks.len()
     }

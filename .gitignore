@@ -25,3 +25,8 @@ Cargo.lock
 # Environment files
 .env
 .env.local
+
+# Code-health tooling artifacts
+.desloppify/
+.omo/
+scorecard.png

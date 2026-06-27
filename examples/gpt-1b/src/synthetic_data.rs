@@ -45,16 +45,19 @@ impl<B: Backend> SyntheticDataLoader<B> {
     }
 
     /// Total number of batches configured.
+    #[allow(dead_code)]
     pub fn num_batches(&self) -> usize {
         self.num_batches
     }
 
     /// Current batch index (0-based).
+    #[allow(dead_code)]
     pub fn current_batch(&self) -> usize {
         self.current
     }
 
     /// Resets the iterator to the beginning.
+    #[allow(dead_code)]
     pub fn reset(&mut self) {
         self.current = 0;
     }
